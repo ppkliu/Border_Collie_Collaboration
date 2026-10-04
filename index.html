@@ -1,0 +1,63 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Border Collie Collaboration</title>
+<style>
+:root{--bg:#F2F4F0;--fg:#161C18;--mut:#5C6660;--line:#D5DAD1;--acc:#2F6B47;--card:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#121510;--fg:#E9EDE5;--mut:#97A192;--line:#2E342B;--acc:#74C08D;--card:#1A1E18}}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,sans-serif}
+main{max-width:720px;margin:0 auto;padding:40px 20px}
+h1{font-size:28px;margin:0 0 4px}.sub{color:var(--mut);margin:0 0 24px}
+ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+li{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+a{color:var(--acc);font-weight:600;font-size:18px;text-decoration:none}a:hover{text-decoration:underline}
+p{margin:4px 0}small,footer{color:var(--mut);font-size:13px}footer{margin-top:24px}
+</style></head><body>
+<div id="__issue_bar"><span>發現問題或有建議？</span>
+<a id="__issue_link" href="https://github.com/ppkliu/Border_Collie_Collaboration/issues/new" target="_blank" rel="noopener">回報問題 →</a>
+<a id="__issue_list" href="https://github.com/ppkliu/Border_Collie_Collaboration/issues" target="_blank" rel="noopener">查看已回報的問題</a></div>
+<style>
+#__issue_bar{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:center;
+  padding:10px 16px;background:#1f2328;color:#fff;font:14px/1.4 system-ui,sans-serif;
+  padding-top:calc(10px + env(safe-area-inset-top,0px))}
+#__issue_bar span{opacity:.9}
+#__issue_link{font-weight:700;padding:7px 14px;border-radius:999px;text-decoration:none;
+  background:#f4c542;color:#1f2328;white-space:nowrap}
+#__issue_link:hover,#__issue_link:focus-visible{background:#ffd966;outline:2px solid #fff;outline-offset:2px}
+#__issue_list{color:#fff;text-decoration:underline;white-space:nowrap}
+@media print{#__issue_bar{display:none}}
+</style>
+<script>
+(function(){
+  var a=document.getElementById("__issue_link");
+  // User-Agent 字串的順序是瀏覽器固定的（Chrome 也會帶 AppleWebKit、Safari 字樣），
+  // 所以自己判斷：先寫實際的瀏覽器與版本，再寫作業系統與引擎，原始字串放最後
+  function browser(){
+    var ua=navigator.userAgent, m, name="未知瀏覽器", ver="";
+    var tests=[["Edge",/Edg(?:e|A|iOS)?\/([\d.]+)/],["Opera",/OPR\/([\d.]+)/],["Samsung Internet",/SamsungBrowser\/([\d.]+)/],
+      ["Chrome",/(?:Chrome|CriOS)\/([\d.]+)/],["Firefox",/(?:Firefox|FxiOS)\/([\d.]+)/],["Safari",/Version\/([\d.]+).*Safari/]];
+    for(var i=0;i<tests.length;i++){ m=ua.match(tests[i][1]); if(m){ name=tests[i][0]; ver=m[1].split(".")[0]; break; } }
+    var os=/Windows/.test(ua)?"Windows":/Android/.test(ua)?"Android":/iPhone|iPad|iPod/.test(ua)?"iOS":
+      /Mac OS X/.test(ua)?"macOS":/CrOS/.test(ua)?"ChromeOS":/Linux/.test(ua)?"Linux":"未知系統";
+    var eng=(m=ua.match(/Gecko\/\d+.*Firefox/))?"Gecko":(m=ua.match(/AppleWebKit\/([\d.]+)/))?"AppleWebKit "+m[1]:"";
+    return name+(ver?" "+ver:"")+"（"+os+(eng?"，引擎 "+eng:"")+"）\n<details><summary>完整 User-Agent</summary>\n\n`"+ua+"`\n</details>";
+  }
+  function url(){
+    var ctx="";
+    try{ if(typeof window.__issueContext==="function") ctx=String(window.__issueContext()||""); }catch(e){}
+    var lines=["**頁面**："+(document.title||"index.html")+"（index.html）","**網址**："+location.href,
+      "**發布版本**：2026-10-05 01:14:20"];
+    if(ctx) lines.push("**當時的狀態**："+ctx);
+    lines.push("**瀏覽器**："+browser(),"","## 問題描述","","（看到什麼、預期應該是什麼）","",
+      "## 重現步驟","","1. ","","（可以直接把截圖貼在這裡）");
+    return "https://github.com/ppkliu/Border_Collie_Collaboration/issues/new?title="+encodeURIComponent("[index.html] ")+"&body="+encodeURIComponent(lines.join("\n"));
+  }
+  ["click","focus","mouseenter","touchstart"].forEach(function(ev){ a.addEventListener(ev,function(){ a.href=url(); }); });
+})();
+</script>
+<main>
+<h1>Border Collie Collaboration</h1><p class="sub">牧羊犬、羊、牛、狼的角色動作：檢視頁與展示頁</p>
+<ul>
+<li><a href="review.html">Sprite Frame Review</a><p>每個角色、每個動作、八個方向逐幀檢視，標出跳幀與圖片問題</p><small>4.9 MB · 更新 2026-10-05 01:11</small></li>
+<li><a href="flock.html">Pasture Flock Test</a><p>鳥群場景：八方向動畫、100–2000 隻、效能紀錄</p><small>25.0 MB · 更新 2026-10-05 01:12</small></li>
+<li><a href="pixel.html">Pasture Pixel Sprites</a><p>原圖／128／64 三種版本同步播放</p><small>15.4 MB · 更新 2026-10-05 01:13</small></li>
+<li><a href="scene.html">Pasture Free Roam</a><p>多角色場景，六種貼圖格式的效能比較</p><small>6.5 MB · 更新 2026-10-05 01:13</small></li>
+</ul><footer>發布於 <span id="stamp">2026-10-05 01:14:20</span> · 來源 auto_sprites@05a6283</footer></main></body></html>
